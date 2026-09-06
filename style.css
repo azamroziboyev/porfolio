@@ -412,6 +412,31 @@ body.dark-mode .category {
     color: #4da6ff;
 }
 
+/* Dark Mode'dagi p tegi ichidagi havola (a tegi) rangi */
+body.dark-mode p a {
+    color:#4da6ff; /* O'zingiz xohlagan rang kodini qo'ying (Masalan: toq sariq) */
+    text-decoration: underline; /* Tagiga chizish (ixtiyoriy) */
+}
+
+/* Sichqoncha olib borilgandagi rangi (Hover) */
+body.dark-mode p a:hover {
+    color: #ffb74d; /* Hover bo'lgandagi ochroq rang */
+}
+
+/* Dark Mode'da blockquote va #havolar ichidagi a tegi rangi */
+body.dark-mode blockquote a,
+body.dark-mode #havolar a {
+    color: #4da6ff; /* O'zingiz xohlagan rang kodi (masalan: och ko'k) */
+    text-decoration: underline;
+}
+
+/* Sichqoncha olib borilgandagi rangi (Hover) */
+body.dark-mode blockquote a:hover,
+body.dark-mode #havolar a:hover {
+    color: #ffb74d; /* Hover bo'lgandagi yanada ochroq rang */
+}
+
+
 body.dark-mode .header-card h1,
 body.dark-mode .article-content h2,
 body.dark-mode .article-content p.lead {
