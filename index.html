@@ -1,20 +1,102 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Rozz — Junior Python Backend Developer</title>
-    <meta name="description" content="Personal portfolio of Alex Rozz, Junior Python Backend Developer. Clean architecture, high-performance APIs, and automation systems." />
-    <meta property="og:title" content="Alex Rozz — Junior Python Backend Developer" />
-    <meta property="og:description" content="Personal portfolio of Alex Rozz, Junior Python Backend Developer. Clean architecture, high-performance APIs, and automation systems." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#f9f8f5] text-[#1c1b18] font-sans antialiased selection:bg-[#1c1b18] selection:text-[#f9f8f5]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamonaviy Web Texnologiyalari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <div class="toc">
+
+                <!-- Tillar almashinuvi tugmalari -->
+                <div class="lang-switcher">
+                    <button onclick="changeLanguage('uz')" class="lang-btn active" id="btn-uz">UZ</button>
+                    <span class="lang-divider">|</span>
+                    <button onclick="changeLanguage('ru')" class="lang-btn" id="btn-ru">RU</button>
+                    <span class="lang-divider">|</span>
+                    <button onclick="changeLanguage('en')" class="lang-btn" id="btn-en">ENG</button>
+                </div>
+
+                <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox">
+                        <span class="slider round">
+                            <span class="icon sun">☀️</span>
+                            <span class="icon moon">🌙</span>
+                        </span>
+                </label>
+
+                <h3>Mundarija</h3>
+                <ul>
+                    <li><a href="#home-hero">1. Home</a></li>
+                    <li><a href="#skills">2. Skills in Tech world</a></li>
+                    <li><a href="#projects">3. Projects I built so far</a></li>
+                    <li><a href="#journey">4. My journey in Tech </a></li>
+                    <li><a href="#education">5. Azam's education </a></li>
+                    <li><a href="#contact">6. here is where you can find me </a></li>
+                    <li><a href="#xulosa">7. Xulosa</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="article-container">
+            <header class="article-header">
+                <span class="category">Python Developer</span>
+                <h1 id = "home-hero" data-i18n="title">Azam Ruzibaev</h1>
+                <div class="meta-info">
+                    <span>Muallif: Azam Ruzibaev</span> &bull;
+                    <span>Sentyabr 6, 2026</span>
+                </div>
+            </header>
+
+            <hr class="divider">
+
+            <article class="article-content">
+                <section id="kirish">
+                    <p class="lead" data-i18n="intro">
+                       Hammasi shu yerdan boshlanadi :)
+                    </p>
+                </section>
+
+                <section id="ahamiyati">
+                    <h2>Python Dasturchisi</h2>
+                    <p>
+                       Men shunchaki muammo hal etuvchiman
+                    </p>
+                    <p>
+                        Qisqa qilib aytganda yillar davomida barchasini chalkashtirib yubordim.
+                    </p>
+                    <blockquote>
+                        "Yaxshi dizayn — bu shunchaki chiroyli ko'rinish emas, balki to'g'ri va qulay ishlashdir."
+                    </blockquote>
+                </section>
+
+                 <hr class="divider">
+
+                <section id="minimalizm">
+                    <h2>Minimalizm Nega Muhim?</h2>
+                    <p>
+                        Ortiqcha bezaklar, miltillovchi reklamalar va murakkab navigatsiyalar ko'pincha foydalanuvchini asosiy maqsaddan — ma'lumot olishdan chalg'itadi. Oq fonga ega minimalist maqola saytlari quyidagi afzalliklarga ega:
+                    </p>
+                    <ul>
+                        <li>Yuqori yuklanish tezligi</li>
+                        <li>O'qish uchun qulaylik va e'tiborni jamlash</li>
+                        <li>Mobil qurilmalarda mukammal ko'rinish</li>
+                    </ul>
+                </section>
+
+                <section id="xulosa">
+                    <h2>Xulosa</h2>
+                    <p>
+                        Xulosa qilib aytganda, ba'zan eng oddiy yechim eng samarali yechim bo'lib chiqadi. Toza va tartibli sahifa har doim foydalanuvchiga yoqimli tajriba ulashadi.
+                    </p>
+                </section>
+            </article>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
