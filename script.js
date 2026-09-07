@@ -1,24 +1,21 @@
-// 1. Tarjimalar lug'ati
+// Tarjimalar
 const translations = {
     uz: {
         title: "Azam Ruzibaev",
         intro: "Hammasi shu yerdan boshlanadi :)"
     },
     ru: {
-        title: "Развитие веб-технологий",
-        intro: "Сегодня интернет является неотъемлемой частью жизни каждого человека."
+        title: "Азам Рузибаев",
+        intro: "Все начинается отсюда :)"
     },
     en: {
-        title: "The Evolution of Web Technologies",
-        intro: "Today, the internet is an integral part of everyone's life."
+        title: "Azam Ruzibaev",
+        intro: "It all starts here :)"
     }
 };
 
-// 2. Tilni o'zgartirish funksiyasi
 function changeLanguage(lang) {
-    // Sahifadagi barcha data-i18n atributli elementlarni topamiz
     const elements = document.querySelectorAll('[data-i18n]');
-
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -26,49 +23,95 @@ function changeLanguage(lang) {
         }
     });
 
-    // Tanlangan tilni saqlab qo'yish (sahifa yangilanganda o'chib ketmasligi uchun)
     localStorage.setItem('selectedLang', lang);
 
-    // Tugmalarning faol (active) holatini yangilash
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(`btn-${lang}`).classList.add('active');
+    const activeBtn = document.getElementById(`btn-${lang}`);
+    if (activeBtn) activeBtn.classList.add('active');
 }
 
-// 3. Sahifa yuklanganda saqlangan tilni tiklash
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLang') || 'uz';
-    changeLanguage(savedLang);
-});
+// TOGGLE THEME LOGIC (Netlify xatolarisiz xavfsiz ishlaydi)
+function initTheme() {
+    const themeCheckbox = document.getElementById('theme-checkbox');
+    if (!themeCheckbox) return;
 
-// ==========================================
-// TOGGLE SWITCH MANTIQI
-// ==========================================
-const themeCheckbox = document.getElementById('theme-checkbox');
-
-function setTheme(isDark) {
-    if (isDark) {
-        document.body.classList.add('dark-mode');
-        themeCheckbox.checked = true;
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeCheckbox.checked = false;
-        localStorage.setItem('theme', 'light');
+    function setTheme(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            themeCheckbox.checked = true;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeCheckbox.checked = false;
+            localStorage.setItem('theme', 'light');
+        }
     }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         setTheme(true);
     } else {
         setTheme(false);
     }
-});
 
-if (themeCheckbox) {
     themeCheckbox.addEventListener('change', (e) => {
         setTheme(e.target.checked);
     });
 }
+
+// FLEXBOX CAROUSEL SLIDER LOGIC
+function initCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const cards = track.querySelectorAll('.project-card');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    // Avtomatik o'tib turish (har 4 soniyada)
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    startAutoSlide();
+}
+
+// DOM Yuklangach ishga tushirish
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLang') || 'uz';
+    changeLanguage(savedLang);
+    initTheme();
+    initCarousel();
+});

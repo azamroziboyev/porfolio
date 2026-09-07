@@ -1,4 +1,4 @@
-/* Asosiy sozlamalar */
+/* Asosiy Sozlamalar */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Havola bosilganda sekin silliq tushish uchun */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -14,9 +14,9 @@ body {
     color: #242424;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.8;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ikki ustunli sig'diruvchi konteyner */
 .layout-container {
     display: flex;
     max-width: 1000px;
@@ -25,276 +25,58 @@ body {
     gap: 60px;
 }
 
-/* Chap tomondagi menyu (Sticky navigation) */
 .sidebar {
-    width: 220px;
+    width: 240px;
     flex-shrink: 0;
 }
 
 .toc {
     position: sticky;
-    top: 50px; /* Sahifani pastga scroll qilganda teppada qolib ketadi */
+    top: 40px;
 }
 
-.toc h3 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 15px;
-}
-
-.toc ul {
-    list-style: none;
-}
-
-.toc li {
-    margin-bottom: 10px;
-}
-
-.toc a {
-    text-decoration: none;
-    color: #555;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-.toc a:hover {
-    color: #000;
-    font-weight: 600;
-}
-
-/* O'ng tomondagi asosiy maqola qismi */
-.article-container {
-    max-width: 680px;
-    flex-grow: 1;
-}
-
-.article-header {
-    margin-bottom: 25px;
-}
-
-.category {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #6b6b6b;
-    font-weight: 600;
-}
-
-.article-header h1 {
-    font-size: 2.3rem;
-    line-height: 1.2;
-    margin: 10px 0;
-
-}
-
-.meta-info {
-    font-size: 0.9rem;
-    color: #6b6b6b;
-}
-
-.divider {
-    border: none;
-    border-top: 1px solid #eaeaea;
-    margin-bottom: 30px;
-}
-
-/* Maqola matnlari */
-section {
-    margin-bottom: 40px;
-}
-
-.article-content p {
-    font-size: 1.1rem;
+/* Header controls (Lang va Theme) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
-    color: #292929;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
 }
 
-.article-content p.lead {
-    font-size: 1.25rem;
-    color: #444;
-}
-
-.article-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #111;
-}
-
-.article-content blockquote {
-    border-left: 3px solid #111;
-    padding-left: 20px;
-    margin: 25px 0;
-    font-style: italic;
-    color: #555;
-}
-
-.article-content ul {
-    margin: 0 0 20px 20px;
-}
-
-/* Telefonlar uchun moslashuvchanlik */
-@media (max-width: 768px) {
-    .layout-container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .toc {
-        position: static;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 15px;
-    }
-}
-/* Til tugmalari dizayni */
 .lang-switcher {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 25px;
+    gap: 6px;
     font-size: 0.85rem;
     font-weight: 600;
 }
 
 .lang-btn {
-    background: none;        /* Button fonini olib tashlaydi */
-    border: none;            /* Button atrofidagi chiziqni olib tashlaydi */
-    padding: 0;              /* Ichki masofani nolga tushiradi */
-    font: inherit;           /* Asosiy shrift sozlamalarini oladi */
-    cursor: pointer;         /* Sichqoncha kelganda ko'rsatkich (kursor) o'zgaradi */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
     color: #888;
-    transition: color 0.2s ease, border-color 0.2s ease;
-    border-bottom: 2px solid transparent; /* Aktiv holatda joyi surilib ketmasligi uchun */
+    transition: color 0.2s ease;
 }
 
-.lang-btn:hover {
-    color: #111;
-}
-
-/* Tanlangan (aktiv) til ko'rinishi */
-.lang-btn.active {
-    color: #111;
-    border-bottom-color: #111; /* Pastki chiziq hosil qiladi */
+.lang-btn:hover, .lang-btn.active {
+    color: #0066cc;
 }
 
 .lang-divider {
     color: #ccc;
-    font-weight: 300;
 }
 
-/* Toggel konteyneri */
-.header-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-}
-
-.header-controls .lang-switcher {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* Konteyner joylashuvi */
-.header-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-}
-
-.header-controls .lang-switcher {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* ==========================================
-   SIRPANUVCHI TOGGLE SWITCH STILI
-   ========================================== */
-
+/* Toggle Switch */
 .theme-switch {
     position: relative;
     display: inline-block;
-    width: 44px;
-    height: 22px;
-}
-
-/* Yashirin checkbox */
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* Tugma yo'lagi (Slider) */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: 0.3s ease;
-    border-radius: 22px;
-}
-
-/* Tugma ichidagi aylanayotgan doira */
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.3s ease;
-    border-radius: 50%;
-}
-
-/* Checkbox yonishi (Active holat) */
-input:checked + .slider {
-    background-color: #0066cc;
-}
-
-input:checked + .slider:before {
-    transform: translateX(22px);
-}
-
-/* Toggel konteyneri */
-.header-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-}
-
-.header-controls .lang-switcher {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* ==========================================
-   IKONKALI SIRPANUVCHI TOGGLE SWITCH STILI
-   ========================================== */
-
-.theme-switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
+    width: 48px;
+    height: 24px;
 }
 
 .theme-switch input {
@@ -309,46 +91,33 @@ input:checked + .slider:before {
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: #d1d5db;
     transition: 0.3s ease;
-    border-radius: 26px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 4px;
 }
 
-/* Switch ichidagi ikonkalarning joylashuvi */
 .slider .icon {
-    font-size: 11px;
+    font-size: 10px;
     user-select: none;
     z-index: 1;
-    transition: opacity 0.2s ease;
 }
 
-.slider .sun {
-    opacity: 1;
-}
-
-.slider .moon {
-    opacity: 0.5;
-}
-
-/* Sirpanuvchi Oq Doira */
 .slider:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     left: 3px;
     bottom: 3px;
     background-color: white;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s ease;
     border-radius: 50%;
     z-index: 2;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Active (Dark Mode) holati */
 input:checked + .slider {
     background-color: #374151;
 }
@@ -357,103 +126,469 @@ input:checked + .slider:before {
     transform: translateX(24px);
 }
 
-input:checked + .slider .sun {
-    opacity: 0.5;
+/* Sidebar Menu */
+.toc h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 12px;
 }
 
-input:checked + .slider .moon {
-    opacity: 1;
+.toc ul {
+    list-style: none;
+    margin-bottom: 25px;
 }
 
-/* ==========================================
-   DARK MODE STILLARI
-   ========================================== */
+.toc li {
+    margin-bottom: 8px;
+}
 
+.toc a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+}
+
+.toc a:hover {
+    color: #0066cc;
+    font-weight: 600;
+}
+
+/* GitHub uslubidagi Profil Rasmi */
+.profile-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover; /* Aspect ratio saqlanadi */
+    border: 3px solid #e1e4e8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.03);
+    border-color: #0066cc;
+}
+
+/* Main Content */
+.article-container {
+    max-width: 680px;
+    flex-grow: 1;
+}
+
+.category {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc;
+    font-weight: 700;
+}
+
+.article-header h1 {
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin: 8px 0 12px 0;
+}
+
+/* Title Ostidagi Tugmalar (Transparent 50%, Rounded, Borderli) */
+.header-social-btns {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.header-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% Transparent */
+    border: 1px solid #d0d7de;
+    border-radius: 20px; /* Rounded shape */
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+    border-color: #0066cc;
+    color: #0066cc;
+    transform: translateY(-1px);
+}
+
+.meta-info {
+    font-size: 0.88rem;
+    color: #6b6b6b;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #eaeaea;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.article-content p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    color: #292929;
+}
+
+.article-content p.lead {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.article-content h2 {
+    font-size: 1.45rem;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.article-content blockquote {
+    border-left: 3px solid #0066cc;
+    padding-left: 18px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    background: #f8fbff;
+    padding: 12px 18px;
+    border-radius: 0 8px 8px 0;
+}
+
+.article-content ul {
+    margin: 0 0 20px 20px;
+}
+
+/* FLEXBOX CAROUSEL PROJECTS STYLES */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.project-card {
+    min-width: 100%; /* Bir vaqtning o'zida bitta loyiha to'liq ko'rinadi */
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+    background: #0066cc;
+    color: white;
+    border-color: #0066cc;
+}
+
+.prev-btn { left: -18px; }
+.next-btn { right: -18px; }
+
+/* CONTACTS BUTTONS */
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.glow-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    color: #ffffff;
+    background-color: #0066cc;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+    background-color: #0052a3;
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.6);
+    transform: translateY(-2px);
+}
+
+/* DARK MODE STILLARI */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
 
-body.dark-mode .torn-card-inner {
-    background-color: #1e1e1e;
+body.dark-mode .header-controls,
+body.dark-mode .divider {
+    border-bottom-color: #2a2a2a;
+    border-top-color: #2a2a2a;
+}
+
+body.dark-mode .toc a { color: #aaa; }
+body.dark-mode .toc a:hover { color: #4da6ff; }
+
+body.dark-mode .profile-avatar {
+    border-color: #333;
+}
+
+body.dark-mode .header-btn {
+    background-color: rgba(30, 30, 30, 0.5);
+    border-color: #444;
     color: #e0e0e0;
 }
 
-body.dark-mode .torn-card {
-    filter: drop-shadow(0px 8px 18px rgba(0, 0, 0, 0.5));
-}
-
-body.dark-mode .header-controls {
-    border-bottom-color: #2e2e2e;
-}
-
-body.dark-mode .lang-btn {
-    color: #777;
-}
-
-body.dark-mode .lang-btn:hover,
-body.dark-mode .lang-btn.active {
+body.dark-mode .header-btn:hover {
+    background-color: rgba(77, 166, 255, 0.15);
+    border-color: #4da6ff;
     color: #4da6ff;
-}
-
-body.dark-mode .toc h3 {
-    color: #888;
-}
-
-body.dark-mode .toc a {
-    color: #ccc;
-}
-
-body.dark-mode .toc a:hover {
-    color: #4da6ff;
-}
-
-body.dark-mode .category {
-    color: #4da6ff;
-}
-
-/* Dark Mode'dagi p tegi ichidagi havola (a tegi) rangi */
-body.dark-mode p a {
-    color:#4da6ff; /* O'zingiz xohlagan rang kodini qo'ying (Masalan: toq sariq) */
-    text-decoration: underline; /* Tagiga chizish (ixtiyoriy) */
-}
-
-/* Sichqoncha olib borilgandagi rangi (Hover) */
-body.dark-mode p a:hover {
-    color: #ffb74d; /* Hover bo'lgandagi ochroq rang */
-}
-
-/* Dark Mode'da blockquote va #havolar ichidagi a tegi rangi */
-body.dark-mode blockquote a,
-body.dark-mode #havolar a {
-    color: #4da6ff; /* O'zingiz xohlagan rang kodi (masalan: och ko'k) */
-    text-decoration: underline;
-}
-
-/* Sichqoncha olib borilgandagi rangi (Hover) */
-body.dark-mode blockquote a:hover,
-body.dark-mode #havolar a:hover {
-    color: #ffb74d; /* Hover bo'lgandagi yanada ochroq rang */
-}
-
-
-body.dark-mode .header-card h1,
-body.dark-mode .article-content h2,
-body.dark-mode .article-content p.lead {
-    color: #ffffff;
-}
-
-body.dark-mode .meta-info {
-    color: #aaa;
 }
 
 body.dark-mode .article-content p,
-body.dark-mode .article-content li {
-    color: #d0d0d0;
-}
+body.dark-mode .article-content li { color: #ccc; }
+
+body.dark-mode .article-header h1,
+body.dark-mode .article-content h2,
+body.dark-mode .project-card h3 { color: #fff; }
 
 body.dark-mode .article-content blockquote {
+    background: #182232;
     border-left-color: #4da6ff;
-    background: #172234;
     color: #bbb;
+}
+
+body.dark-mode p a, body.dark-mode blockquote a {
+    color: #4da6ff;
+}
+
+body.dark-mode .project-card {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .carousel-btn {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+    .sidebar { width: 100%; }
+    .toc { position: static; }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+}
+
+/* TIMELINE / ROADMAP STILARI */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 25px;
+}
+
+/* Doiralarni tutashtirib turuvchi chiziq */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 42px; /* Doira markaziga moslashtirish */
+    width: 2px;
+    background-color: #e5e7eb;
+    z-index: 1;
+}
+
+body.dark-mode .timeline::before {
+    background-color: #333;
+}
+
+/*time line xarita qismi*/
+/* Har bir qadam bloki */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Raqamli doirachalar */
+.timeline-number {
+    width: 44px;
+    height: 44px;
+    background-color: #0066cc;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    border: 3px solid #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .timeline-number {
+    border-color: #121212; /* Dark mode foniga moslashadi */
+    background-color: #4da6ff;
+    color: #121212;
+}
+
+/* Hover qilinganda doira biroz kattalashadi */
+.timeline-item:hover .timeline-number {
+    transform: scale(1.1);
+}
+
+/* Matn qismi */
+.timeline-content {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px 20px;
+    flex-grow: 1;
+    transition: border-color 0.3s ease;
+}
+
+.timeline-content h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0 !important;
+}
+
+body.dark-mode .timeline-content {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .timeline-content h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .timeline-content p {
+    color: #aaa;
+}
+
+/* Live Demo tugmasi ko'rinishi */
+.live-btn {
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+    gap: 8px !important;
+}
+
+.live-btn:hover {
+    background-color: rgba(16, 185, 129, 0.12) !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Animatsiyali nuqta (Pulse Dot) */
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.live-dot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #10b981;
+    border-radius: 50%;
+    animation: live-pulse 1.5s infinite ease-out;
+}
+
+@keyframes live-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
 }

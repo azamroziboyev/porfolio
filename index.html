@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zamonaviy Web Texnologiyalari</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,40 +12,59 @@
         <aside class="sidebar">
             <div class="toc">
 
-                <!-- Tillar almashinuvi tugmalari -->
-                <div class="lang-switcher">
-                    <button onclick="changeLanguage('uz')" class="lang-btn active" id="btn-uz">UZ</button>
-                    <span class="lang-divider">|</span>
-                    <button onclick="changeLanguage('ru')" class="lang-btn" id="btn-ru">RU</button>
-                    <span class="lang-divider">|</span>
-                    <button onclick="changeLanguage('en')" class="lang-btn" id="btn-en">ENG</button>
-                </div>
+                <!-- Header Controls: Tillar va Theme Toggle -->
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button onclick="changeLanguage('uz')" class="lang-btn active" id="btn-uz">UZ</button>
+                        <span class="lang-divider">|</span>
+                        <button onclick="changeLanguage('ru')" class="lang-btn" id="btn-ru">RU</button>
+                        <span class="lang-divider">|</span>
+                        <button onclick="changeLanguage('en')" class="lang-btn" id="btn-en">ENG</button>
+                    </div>
 
-                <label class="theme-switch" for="theme-checkbox">
+                    <label class="theme-switch" for="theme-checkbox">
                         <input type="checkbox" id="theme-checkbox">
                         <span class="slider round">
                             <span class="icon sun">☀️</span>
                             <span class="icon moon">🌙</span>
                         </span>
-                </label>
+                    </label>
+                </div>
 
                 <h3>Mundarija</h3>
                 <ul>
                     <li><a href="#home-hero">1. Home</a></li>
-                    <li><a href="#skills">2. Skills in Tech world</a></li>
+                    <li><a href="#minimalizm">2. Skills in Tech world</a></li>
                     <li><a href="#projects">3. Projects I built so far</a></li>
-                    <li><a href="#journey">4. My journey in Tech </a></li>
-                    <li><a href="#education">5. Azam's education </a></li>
-                    <li><a href="#contact">6. here is where you can find me </a></li>
-                    <li><a href="#xulosa">7. Xulosa</a></li>
+                    <li><a href="#journey">4. My journey in Tech</a></li>
+                    <li><a href="#education">5. Azam's education</a></li>
+                    <li><a href="#contacts">6. Contacts</a></li>
                 </ul>
+
+                <!-- GitHub uslubidagi Profil Rasmi -->
+                <div class="profile-container">
+                    <img src="profile.jpg" alt="Azam Ruzibaev" class="profile-avatar">
+                </div>
             </div>
         </aside>
 
         <main class="article-container">
             <header class="article-header">
                 <span class="category">Python Developer</span>
-                <h1 id = "home-hero" data-i18n="title">Azam Ruzibaev</h1>
+                <h1 id="home-hero" data-i18n="title">Azam Ruzibaev</h1>
+
+                <!-- Title ostidagi Transparent Rounded Tugmalar -->
+                <div class="header-social-btns">
+                    <a href="https://github.com" target="_blank" class="header-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://t.me" target="_blank" class="header-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.128.832.941z"/></svg>
+                        Telegram
+                    </a>
+                </div>
+
                 <div class="meta-info">
                     <span>Muallif: Azam Ruzibaev</span> &bull;
                     <span>Sentyabr 6, 2026</span>
@@ -63,40 +82,23 @@
 
                 <section id="ahamiyati">
                     <h2>Python Dasturchisi</h2>
-                    <p>
-                       Men shunchaki muammo hal etuvchiman
-                    </p>
-                    <p>
-                        Qisqasi oxirgi bir necha yil ichida hammasi chalkashib ketdi. O'zim boshqa maqsad bilan boshqa tomonga borayotgandek edim.
-                    </p>
+                    <p>Men shunchaki muammo hal etuvchiman</p>
+                    <p>Qisqasi oxirgi bir necha yil ichida hammasi chalkashib ketdi. O'zim boshqa maqsad bilan boshqa tomonga borayotgandek edim.</p>
                     <blockquote id="havolar">
                         "Hech qachon vaqtinchalik ishlar qilmang! chunki bu ish umrbodga aylanib ketishi mumkin yoki shunchaki vaqtni sarflash bo'lib qolishi mumkin." - <a href="https://azimjon.com/">Azim Pulat</a>
                     </blockquote>
-                    <p>
-                        Jumlaning manosi shuki: Agar biron ish qilayotgan bo'lsangiz shu ishingiz maqsadingiz yoki orzuingiz tomon eltadimi yoki ozgina bo'lsa ham unga sizni yaqinlashtiradimi?
-                    </p>
-                    <p>
-                        Agar javobingiz ha bo'lsa unda bu ishni davom ettirishingiz mumkin agar yo'q bo'lsa siz qilayotgan ishingizga sarflagan vaqtingizga kuydingiz degani to'g'ri siz buning uchun to'landingiz lekin ...
-                    </p>
-                    <p>
-                        Lekin vaqt qimmatliroqdir kam to'lansa ham o'zingiz yoqtirgan sohada ko'proq narsaga erishasiz va undan ham muhimi sohada tajirbaga ham ega bo'lasiz bular ikkalasi esa kelajagingizni yanada yuksak qilishingizga imkoniyat eshigini ochadi.
-                    </p>
-                    <p>
-                        <a id="havola" href="https://en.wikipedia.org/wiki/David_J._Malan">David Malan</a> tufayli texnologiya dunyosidagi sayohatlarim juda esdaqolarli kechdi.
-                    </p>
-                    <p>
-                        Uning barcha kurslari juda ham tushunarli qilib tayyorlangan va xattoki o'rganuvchini zeriktirib qo'ymasligi bilan mashhur.
-                        Ularga barcha CS50 kurslarini aytib o'tish mumkin. Masalan men o'zim "CS50P - Introduction to Programming with Python" kursi bilan boshlagan man sayohatimni.
-                    </p>
+                    <p>Jumlaning manosi shuki: Agar biron ish qilayotgan bo'lsangiz shu ishingiz maqsadingiz yoki orzuingiz tomon eltadimi yoki ozgina bo'lsa ham unga sizni yaqinlashtiradimi?</p>
+                    <p>Agar javobingiz ha bo'lsa unda bu ishni davom ettirishingiz mumkin agar yo'q bo'lsa siz qilayotgan ishingizga sarflagan vaqtingizga kuydingiz degani to'g'ri siz buning uchun to'landingiz lekin ...</p>
+                    <p>Lekin vaqt qimmatliroqdir kam to'lansa ham o'zingiz yoqtirgan sohada ko'proq narsaga erishasiz va undan ham muhimi sohada tajirbaga ham ega bo'lasiz bular ikkalasi esa kelajagingizni yanada yuksak qilishingizga imkoniyat eshigini ochadi.</p>
+                    <p><a id="havola" href="https://en.wikipedia.org/wiki/David_J._Malan">David Malan</a> tufayli texnologiya dunyosidagi sayohatlarim juda esdaqolarli kechdi.</p>
+                    <p>Uning barcha kurslari juda ham tushunarli qilib tayyorlangan va xattoki o'rganuvchini zeriktirib qo'ymasligi bilan mashhur. Ularga barcha CS50 kurslarini aytib o'tish mumkin. Masalan men o'zim "CS50P - Introduction to Programming with Python" kursi bilan boshlagan man sayohatimni.</p>
                 </section>
 
-                 <hr class="divider">
+                <hr class="divider">
 
                 <section id="minimalizm">
                     <h2>Skills I gained :]</h2>
-                    <p>
-                        Magistraturada o'qiyotgan paytimda kitob do'konida menejer bo'lib ishlashga ham ulgurganman. Ushbu qiyin kechgan 2 yil davomida har bir insonga kerak bo'ladigan ba'zi (soft skills) ko'nikmalarni o'rgandim.
-                    </p>
+                    <p>Magistraturada o'qiyotgan paytimda kitob do'konida menejer bo'lib ishlashga ham ulgurganman. Ushbu qiyin kechgan 2 yil davomida har bir insonga kerak bo'ladigan ba'zi (soft skills) ko'nikmalarni o'rgandim.</p>
                     <ul>
                         <li>Communication</li>
                         <li>being good at understanding client</li>
@@ -104,13 +106,141 @@
                     </ul>
                 </section>
 
-            <hr class="divider">
+                <hr class="divider">
 
-                <section id="minimalizm">
-                    <h2>Skills I gained :]</h2>
-                    <p>
-                        Magistraturada o'qiyotgan paytimda kitob do'konida menejer bo'lib ishlashga ham ulgurganman. Ushbu qiyin kechgan 2 yil davomida har bir insonga kerak bo'ladigan ba'zi (soft skills) ko'nikmalarni o'rgandim.
-                    </p>
+                <!-- FLEXBOX CAROUSEL PROJECTS SECTION -->
+                <section id="projects">
+                    <h2>Projects</h2>
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+                        <div class="carousel-track-container">
+                            <div class="carousel-track" id="carouselTrack">
+
+
+                                <div class="project-card">
+                                    <img src="hemisvoy.png" alt="Hemisvoy App">
+                                    <h3>Hemisvoy App</h3>
+                                    <p>Talabalar uchun sessiya imtihonlariga tayyorlanishga yordam beruvchi qulay web app.</p>
+                                    <ul>
+                                        <li>Python / Django</li>
+                                        <li>Telegram API</li>
+                                        <li>Fast response</li>
+                                    </ul>
+                                    <div class="header-social-btns">
+                                        <a href="https://github.com" target="_blank" class="header-btn">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                            Source code
+                                        </a>
+                                        <a href="https://demo-link-ingiz.com" target="_blank" class="header-btn live-btn">
+                                            <span class="live-dot"></span>
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                            Live Demo
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <div class="project-card">
+                                    <img src="hemisvoy.png" alt="Hemisvoy App">
+                                    <h3>Yozuvchi - Telegam bot</h3>
+                                    <p>Talabalar uchun sessiya imtihonlariga tayyorlanishga yordam beruvchi qulay web app.</p>
+                                    <ul>
+                                        <li>Python / Django</li>
+                                        <li>Telegram API</li>
+                                        <li>Fast response</li>
+                                    </ul>
+                                    <div class="header-social-btns">
+                                        <a href="https://github.com" target="_blank" class="header-btn">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                            Source code
+                                        </a>
+                                        <a href="https://demo-link-ingiz.com" target="_blank" class="header-btn live-btn">
+                                            <span class="live-dot"></span>
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                            Live Demo
+                                        </a>
+                                </div>
+                                </div>
+
+
+                                <div class="project-card">
+                                    <img src="hemisvoy.png" alt="Hemisvoy App">
+                                    <h3>hamroh - taxi app</h3>
+                                    <p>Talabalar uchun sessiya imtihonlariga tayyorlanishga yordam beruvchi qulay web app.</p>
+                                    <ul>
+                                        <li>Python / Django</li>
+                                        <li>Telegram API</li>
+                                        <li>Fast response</li>
+                                    </ul>
+                                    <div class="header-social-btns">
+                                        <a href="https://github.com" target="_blank" class="header-btn">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                            Source code
+                                        </a>
+                                        <a href="https://demo-link-ingiz.com" target="_blank" class="header-btn live-btn">
+                                            <span class="live-dot"></span>
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                            Live Demo
+                                        </a>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <section id="journey">
+                    <h2>Journey</h2>
+                    <p>Magistraturada o'qiyotgan paytimda kitob do'konida menejer bo'lib ishlashga ham ulgurganman.</p>
+                    <ul>
+                        <li>Communication</li>
+                        <li>being good at understanding client</li>
+                        <li>being good at learning</li>
+                    </ul>
+                    <div class="timeline">
+                            <!-- 1-Qadam -->
+                            <div class="timeline-item">
+                                <div class="timeline-number">1</div>
+                                <div class="timeline-content">
+                                    <h3>CS50P Course</h3>
+                                    <p>Python asoslarini puxta o'rganish va dastlabki mantiqiy fikrlashni shakllantirish.</p>
+                                </div>
+                            </div>
+
+                            <!-- 2-Qadam -->
+                            <div class="timeline-item">
+                                <div class="timeline-number">2</div>
+                                <div class="timeline-content">
+                                    <h3>Bookstore Manager</h3>
+                                    <p>Magistratura davrida kitob do'konida menejer bo'lib ishlab, muhim soft-skillslarga ega bo'ldim.</p>
+                                </div>
+                            </div>
+
+                            <!-- 3-Qadam -->
+                            <div class="timeline-item">
+                                <div class="timeline-number">3</div>
+                                <div class="timeline-content">
+                                    <h3>Backend & Web Projects</h3>
+                                    <p>Hemisvoy va boshqa foydali veb-ilovalar yaratish orqali amaliy tajriba oshirish.</p>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+                <hr class="divider">
+
+                <section id="education">
+                    <h2>Education</h2>
+                    <p>Magistraturada o'qiyotgan paytimda kitob do'konida menejer bo'lib ishlashga ham ulgurganman.</p>
                     <ul>
                         <li>Communication</li>
                         <li>being good at understanding client</li>
@@ -118,11 +248,21 @@
                     </ul>
                 </section>
 
-                <section id="xulosa">
-                    <h2>Xulosa</h2>
-                    <p>
-                        Xulosa qilib aytganda, ba'zan eng oddiy yechim eng samarali yechim bo'lib chiqadi. Toza va tartibli sahifa har doim foydalanuvchiga yoqimli tajriba ulashadi.
-                    </p>
+                <hr class="divider">
+
+                <section id="contacts">
+                    <h2>Contacts and social nets</h2>
+                    <blockquote>
+                       Using social network is kinda easy way to find me but if you are eager to get in touch then simplest way would be calling +998 93 913 77 33
+                    </blockquote>
+                    <h3>my life in social nets:</h3>
+                    <p>here are the links:</p>
+                    <div class="contacts-grid">
+                        <a href="#" class="glow-btn">Github</a>
+                        <a href="#" class="glow-btn">Telegram</a>
+                        <a href="#" class="glow-btn">Instagram</a>
+                        <a href="#" class="glow-btn">Linkedin</a>
+                    </div>
                 </section>
             </article>
         </main>
