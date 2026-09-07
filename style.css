@@ -228,10 +228,40 @@ input:checked + .slider:before {
     transform: translateY(-1px);
 }
 
+/* Meta-info konteyneri */
 .meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     font-size: 0.88rem;
     color: #6b6b6b;
+    margin-bottom: 0; /* Pastki margin olib tashlanadi */
 }
+
+/* Muallif matni chapda, rasm eng o'ng chetda va chiziqqa tegib turadi */
+.author-row {
+    display: flex;
+    align-items: flex-end; /* Elementlarni pastki chiziq bo'yicha taqash */
+    justify-content: space-between; /* Matn chapda, rasm eng o'ngda */
+    width: 100%;
+}
+
+/* Rasm xossalari */
+.meta-image {
+    height: 32px; /* Qulay balandlik o'lchami */
+    width: auto;
+    object-fit: contain;
+    display: block; /* Pastidagi ortiqcha bo'shliqni yo'qotadi */
+}
+
+/* Ajratuvchi chiziq */
+.divider {
+    border: none;
+    border-top: 1px solid #eaeaea;
+    margin-top: 0; /* Rasm va matn chiziqqa tegib turishi uchun */
+    margin-bottom: 30px;
+}
+
 
 .divider {
     border: none;
@@ -592,3 +622,107 @@ body.dark-mode .timeline-content p {
         opacity: 0;
     }
 }
+
+/*chiziqli rasm uzbekistan*/
+/* Ism va rasmni yonma-yon joylashtirish */
+.name-with-skyline {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Kichik ekranlarda chiroyli sig'ishi uchun */
+}
+
+.name-with-skyline h1 {
+    margin: 0;
+}
+
+/* PNG Rasm uchun CSS Mask usuli (Shaffof va rang o'zgaruvchan) */
+.skyline-img-mask {
+    width: 220px;
+    height: 60px;
+    background-color: #111111; /* Light mode uchun qora rang */
+
+    /* PNG rasmni maska sifatida qo'llash */
+    -webkit-mask-image: url('skyline.png');
+    mask-image: url('skyline.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    transition: background-color 0.3s ease;
+}
+
+/* SVG ishlatilsa oddiy stroke rangi moslashuvi */
+.skyline-svg {
+    width: 200px;
+    height: 60px;
+    color: #111111; /* Light mode da qora */
+    transition: color 0.3s ease;
+}
+
+/* DARK MODE UCHUN SOZLAMALAR */
+body.dark-mode .skyline-img-mask {
+    background-color: #ffffff; /* Dark mode bo'lganda OQ rangga o'tadi */
+}
+
+body.dark-mode .skyline-svg {
+    color: #ffffff; /* Dark mode bo'lganda SVG oq rangga o'tadi */
+}
+
+/* Mobil moslashuvchanlik */
+@media (max-width: 600px) {
+    .skyline-svg, .skyline-img-mask {
+        width: 150px;
+        height: 45px;
+    }
+}
+
+.glow-btn {
+    display: inline-flex;
+    align-items: center; /* Ikonka va matnni shaqaloq markazlashtirish */
+    justify-content: center;
+    gap: 8px; /* Ikonka va matn orasidagi masofa */
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #0066cc;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Hover effekti */
+.glow-btn:hover {
+    background-color: #0052a3;
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.6);
+    transform: translateY(-2px);
+}
+
+.glow-btn svg {
+    flex-shrink: 0;
+}
+
+.skills-tech-list {
+    list-style: none; /* Odatiy nuqtalarni olib tashlaydi */
+    padding: 0;
+    margin: 0;
+}
+
+.skills-tech-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Icon va matn orasidagi masofa */
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Icon ranglari */
+.html-icon { color: #e34f26; }     /* HTML tosho'q rang */
+.css-icon { color: #1572b6; }      /* CSS ko'k rang */
+.js-icon { color: #f7df1e; }       /* JavaScript sariq rang */
+.netlify-icon { color: #00c7b7; }  /* Netlify yashil-ko'k rang */
